@@ -12,17 +12,16 @@ public class paraDecimal {
         System.out.println("Informe a base do número: ");
         int baseDigitada = lendoTeclado.nextInt();
 
-        String numeroDig = Integer.toString(numeroDigitado);
-        int tamanhoString = numeroDig.length();
+        String numeroDigString = Integer.toString(numeroDigitado);
 
-        char[] vetor = numeroDig.toCharArray();
-        System.out.printf(Arrays.toString(vetor));
+        char[] vetor = numeroDigString.toCharArray();
+        //System.out.printf(Arrays.toString(vetor)); TA AQUI SÓ PARA MOSTRAR COMO ESTÁ O VETOR
 
         int ultimaPosicao = (vetor.length)-1;
         double resultadoFinal =0.0;
         int potencia =0;
 
-        for (int cont = ultimaPosicao; cont>=0; cont--){//loopa o mesmo número de casas do vetor
+        for (int cont = ultimaPosicao; cont>=0; cont--){ //LOOPA O MESMO NÚMERO DE CASAS DO VETOR
 
             int valor = Character.getNumericValue(vetor[cont]);
             double conversaoValor=valor * Math.pow(baseDigitada,potencia);
@@ -31,12 +30,7 @@ public class paraDecimal {
 
            // System.out.printf("\nVALOR: %d\nPOTENCIA: %d\nCÁLCULO %d x 8^%d",valor,potencia,valor,potencia,conversaoValor);
             potencia++;
-
         }
         System.out.printf("\nRESULTADO: %.2f",resultadoFinal);
-
-
-
     }
-
 }
