@@ -44,8 +44,8 @@ public class paraDecimal {
         System.out.println("Informe o número: ");
         int numeroDigitado = lendoTeclado.nextInt();
 
-        System.out.println("Informe a base do número: ");
-        int baseDigitada = lendoTeclado.nextInt();
+        //System.out.println("Informe a base do número: ");
+        //int baseDigitada = lendoTeclado.nextInt();
 
         String numeroDig = Integer.toString(numeroDigitado);
         int tamanhoString = numeroDig.length();
@@ -53,28 +53,27 @@ public class paraDecimal {
         char[] vetor = numeroDig.toCharArray();
         System.out.printf(Arrays.toString(vetor));
 
-        int potencia=0;
         int ultimaPosicao = (vetor.length)-1;
-        int resultado =0;
+        double resultado =0;
+        int potencia =0;
+        double potenciaIntegrada = 0.0;
 
-        //System.out.println(vetor[ultimaPosicao]);
-        //System.out.printf("ULTIMA POSICAO: %d", ultimaPosicao);
+        for (int cont = ultimaPosicao; cont>=0; cont--){//loopa o mesmo número de casas do vetor
 
-        for (int cont = ultimaPosicao; cont>=0; cont--){
+            potenciaIntegrada=Math.pow(8,vetor[cont]);
+
             potencia++;
-            for (int i = 0 ; i <= potencia ; i++) {
-                resultado *= vetor[cont];
-            }
-            System.out.printf("\nCONT: %d\nVALOR: "+vetor[cont]+"\nPOTENCIA: %d\nRESULTADO %d",cont,potencia,resultado);
+            resultado = vetor[cont]*potenciaIntegrada;
+            System.out.printf("\nPOTENCIA INTEGRADA: "+potenciaIntegrada);
+            System.out.printf("\nVALOR: "+vetor[cont]+"\nPOTENCIA: %d\nRESULTADO %.2f",cont,potencia,resultado);
 
-            
             /*if (resultado == 0){
                 resultado = resultado - resultado + 1;
                 System.out.printf("\nRESULTADO: %d",resultado);
             }else {
                 System.out.printf("\nRESULTADO: %d",resultado);
             }
-
+            PROBLEMA: MINHA POTENCIA TA DIMINUINDO
              */
 
         }
