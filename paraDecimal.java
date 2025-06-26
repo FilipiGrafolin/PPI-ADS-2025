@@ -7,24 +7,44 @@ public class paraDecimal {
         Scanner lendoTeclado = new Scanner(System.in);
 
         System.out.println("Informe o número: ");
-        int numeroDigitado = lendoTeclado.nextInt();
+        String numeroDigitado = lendoTeclado.next();
 
         System.out.println("Informe a base do número: ");
         int baseDigitada = lendoTeclado.nextInt();
 
-        String numeroDigString = Integer.toString(numeroDigitado);
-
-        char[] vetor = numeroDigString.toCharArray();
-        //System.out.printf(Arrays.toString(vetor)); TA AQUI SÓ PARA MOSTRAR COMO ESTÁ O VETOR
+        char[] vetor = numeroDigitado.toCharArray();
+        //System.out.printf(Arrays.toString(vetor)); TA AQUI SÓ PRA MOSTRAR COMO ESTÁ O VETOR
 
         int ultimaPosicao = (vetor.length)-1;
-        double resultadoFinal =0.0;
+        double resultadoFinal=0.0;
         int potencia =0;
 
         for (int cont = ultimaPosicao; cont>=0; cont--){ //LOOPA O MESMO NÚMERO DE CASAS DO VETOR
 
             int valor = Character.getNumericValue(vetor[cont]);
             double conversaoValor=valor * Math.pow(baseDigitada,potencia);
+
+            if (baseDigitada==16){
+                if (vetor[cont]=='A'){
+                    vetor[cont]=10;
+                }
+                if (vetor[cont]=='B'){
+                    vetor[cont]=11;
+                }
+                if (vetor[cont]=='C'){
+                    vetor[cont]=12;
+                }
+                if (vetor[cont]=='D'){
+                    vetor[cont]=13;
+                }
+                if (vetor[cont]=='E'){
+                    vetor[cont]=14;
+                }
+                if (vetor[cont]=='F'){
+                    vetor[cont]=15;
+                }
+
+            }
 
             resultadoFinal+=conversaoValor;
 
