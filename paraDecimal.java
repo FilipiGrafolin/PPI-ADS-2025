@@ -66,7 +66,7 @@ public class paraDecimal {
             System.out.print("DECIMAL PARA OUTRAS BASES"+"\n");
             System.out.print("Informe o número :"+"\n");
             int numerodecimal = decbases.nextInt();
-            System.out.print("Informe a base do número digitado anteriormente: "+"\n");
+            System.out.print("Informe a base que deseja converter: "+"\n");
             int base16 = decbases.nextInt();
             System.out.print("\n");
 
